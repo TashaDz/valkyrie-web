@@ -1,3 +1,3 @@
 # Valkyrie playtest
 
-Unity WebGL playtest 0.2.0: player-following camera and an extended battlefield.
+Unity WebGL playtest 0.3.0: individual soul delivery, nearest-target combat, larger Valkyrie and brighter souls.

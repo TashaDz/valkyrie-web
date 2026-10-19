@@ -16894,7 +16894,7 @@ var wasmImports = {
   "invoke_viiiifi": invoke_viiiifi,
   "invoke_viiiii": invoke_viiiii,
   "invoke_viiiiii": invoke_viiiiii,
-  "invoke_viiiiiifi": invoke_viiiiiifi,
+  "invoke_viiiiiiffi": invoke_viiiiiiffi,
   "invoke_viiiiiii": invoke_viiiiiii,
   "invoke_viiiiiiii": invoke_viiiiiiii,
   "invoke_viiiiiiiii": invoke_viiiiiiiii,
@@ -17240,7 +17240,7 @@ var dynCall_vjiiiii = Module["dynCall_vjiiiii"] = createExportWrapper("dynCall_v
 /** @type {function(...*):?} */
 var dynCall_viiiffi = Module["dynCall_viiiffi"] = createExportWrapper("dynCall_viiiffi");
 /** @type {function(...*):?} */
-var dynCall_viiiiiifi = Module["dynCall_viiiiiifi"] = createExportWrapper("dynCall_viiiiiifi");
+var dynCall_viiiiiiffi = Module["dynCall_viiiiiiffi"] = createExportWrapper("dynCall_viiiiiiffi");
 /** @type {function(...*):?} */
 var dynCall_fi = Module["dynCall_fi"] = createExportWrapper("dynCall_fi");
 /** @type {function(...*):?} */
@@ -17249,6 +17249,10 @@ var dynCall_viififii = Module["dynCall_viififii"] = createExportWrapper("dynCall
 var dynCall_vifffffii = Module["dynCall_vifffffii"] = createExportWrapper("dynCall_vifffffii");
 /** @type {function(...*):?} */
 var dynCall_viiifi = Module["dynCall_viiifi"] = createExportWrapper("dynCall_viiifi");
+/** @type {function(...*):?} */
+var dynCall_viiiiiifi = Module["dynCall_viiiiiifi"] = createExportWrapper("dynCall_viiiiiifi");
+/** @type {function(...*):?} */
+var dynCall_fiiii = Module["dynCall_fiiii"] = createExportWrapper("dynCall_fiiii");
 /** @type {function(...*):?} */
 var dynCall_viffiii = Module["dynCall_viffiii"] = createExportWrapper("dynCall_viffiii");
 /** @type {function(...*):?} */
@@ -17393,8 +17397,6 @@ var dynCall_viffiiii = Module["dynCall_viffiiii"] = createExportWrapper("dynCall
 var dynCall_viiiffffiiii = Module["dynCall_viiiffffiiii"] = createExportWrapper("dynCall_viiiffffiiii");
 /** @type {function(...*):?} */
 var dynCall_viifffffffiiiii = Module["dynCall_viifffffffiiiii"] = createExportWrapper("dynCall_viifffffffiiiii");
-/** @type {function(...*):?} */
-var dynCall_fiiii = Module["dynCall_fiiii"] = createExportWrapper("dynCall_fiiii");
 /** @type {function(...*):?} */
 var dynCall_fiiiii = Module["dynCall_fiiiii"] = createExportWrapper("dynCall_fiiiii");
 /** @type {function(...*):?} */
@@ -18456,10 +18458,10 @@ function invoke_viiiffi(index,a1,a2,a3,a4,a5,a6) {
   }
 }
 
-function invoke_viiiiiifi(index,a1,a2,a3,a4,a5,a6,a7,a8) {
+function invoke_viiiiiiffi(index,a1,a2,a3,a4,a5,a6,a7,a8,a9) {
   var sp = stackSave();
   try {
-    dynCall_viiiiiifi(index,a1,a2,a3,a4,a5,a6,a7,a8);
+    dynCall_viiiiiiffi(index,a1,a2,a3,a4,a5,a6,a7,a8,a9);
   } catch(e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
