@@ -1,3 +1,3 @@
 # Valkyrie playtest
 
-Unity WebGL playtest 0.9.0: readable combat: separated bases, three starting orders per camp, larger spaced fighters, overhead health and floating damage; one clear20-second area stun for enemy hero and army, full Northgard strikes and combat FX.
+Unity WebGL playtest 0.10.0: four readable classes: shield bearer, archer, shaman with wolf, large dual-axe berserker; distinct models, class symbols and healing feedback; retained area stun.
