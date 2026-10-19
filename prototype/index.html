@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Valkyrie — playtest 0.2.0</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#101e26;color:#efe5cb;font-family:Georgia,serif}
+#unity-canvas{position:fixed;inset:0;width:100%;height:100%;display:block;outline:none;touch-action:none;background:#101e26}
+#loading{position:fixed;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#101e26;pointer-events:none}
+h1{font-size:30px;letter-spacing:7px;font-weight:normal;margin:0 0 16px}p{font-size:15px;color:#9aaeb4}
+.track{width:220px;height:3px;background:#29444c;margin:22px}#bar{height:100%;width:0;background:#b8a16a;transition:width .2s}
+#error{display:none;max-width:80%;text-align:center;line-height:1.5;color:#f1bbaa}
+</style>
+</head>
+<body>
+<canvas id="unity-canvas" tabindex="0" width="720" height="1280"></canvas>
+<div id="loading"><h1>VALKYRIE</h1><p>Gather souls. Raise an army.</p><div class="track"><div id="bar"></div></div><p id="error"></p></div>
+<script>
+const canvas=document.getElementById('unity-canvas');
+canvas.addEventListener('pointerdown',()=>canvas.focus());
+(async()=>{
+ let buildUrl='Build';
+ try {
+  const response=await fetch('build.txt?t='+Date.now(),{cache:'no-store'});
+  const name=response.ok?(await response.text()).trim():'';
+  if(/^Build[\w-]*$/.test(name))buildUrl=name;
+ } catch(e) {}
+ document.body.dataset.build=buildUrl;
+ await new Promise((resolve,reject)=>{
+  const script=document.createElement('script');script.src=buildUrl+'/WebGL.loader.js';script.onload=resolve;script.onerror=reject;document.body.appendChild(script);
+ });
+ const instance=await createUnityInstance(canvas,{
+ dataUrl:buildUrl+'/WebGL.data',
+ frameworkUrl:buildUrl+'/WebGL.framework.js',
+ codeUrl:buildUrl+'/WebGL.wasm',
+ streamingAssetsUrl:'StreamingAssets',companyName:'Valkyrie Prototype',productName:'Valkyrie',productVersion:'0.2.0',
+ matchWebGLToCanvasSize:true,devicePixelRatio:Math.min(window.devicePixelRatio||1,2)
+ },progress=>document.getElementById('bar').style.width=(progress*100)+'%');
+ document.getElementById('loading').style.display='none';canvas.focus();window.valkyrieInstance=instance;
+ console.info('VALKYRIE_WEB_BUILD',buildUrl,'0.2.0');
+})().catch(error=>{
+ const message=document.getElementById('error');message.style.display='block';message.textContent='The game could not load. Please refresh the page.';console.error(error);
+});
+</script>
+</body>
+</html>
