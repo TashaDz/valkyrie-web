@@ -1,3 +1,3 @@
 # Valkyrie playtest
 
-Unity WebGL playtest 0.6.0: castle HP indicators, faster Valkyries and an open central clearing.
+Unity WebGL playtest 0.7.0: contextual joystick, first ground soul pickup and first camp recruitment tutorial.
