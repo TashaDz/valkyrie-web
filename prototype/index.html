@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<title>Valkyrie — playtest 0.7.0</title>
+<title>Valkyrie — playtest 0.8.0</title>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <style>
@@ -36,11 +36,11 @@ canvas.addEventListener('pointerdown',()=>canvas.focus());
  dataUrl:buildUrl+'/WebGL.data',
  frameworkUrl:buildUrl+'/WebGL.framework.js',
  codeUrl:buildUrl+'/WebGL.wasm',
- streamingAssetsUrl:'StreamingAssets',companyName:'Valkyrie Prototype',productName:'Valkyrie',productVersion:'0.7.0',
+ streamingAssetsUrl:'StreamingAssets',companyName:'Valkyrie Prototype',productName:'Valkyrie',productVersion:'0.8.0',
  matchWebGLToCanvasSize:true,devicePixelRatio:Math.min(window.devicePixelRatio||1,2)
  },progress=>document.getElementById('bar').style.width=(progress*100)+'%');
  document.getElementById('loading').style.display='none';canvas.focus();window.valkyrieInstance=instance;
- console.info('VALKYRIE_WEB_BUILD',buildUrl,'0.7.0');
+ console.info('VALKYRIE_WEB_BUILD',buildUrl,'0.8.0');
 })().catch(error=>{
  const message=document.getElementById('error');message.style.display='block';message.textContent='The game could not load. Please refresh the page.';console.error(error);
 });
