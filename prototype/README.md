@@ -1,3 +1,3 @@
 # Valkyrie playtest
 
-Unity WebGL playtest 0.3.0: individual soul delivery, nearest-target combat, larger Valkyrie and brighter souls.
+Unity WebGL playtest 0.4.0: team-coloured hair, a smaller battlefield, faster movement, double HP and base-defense response.
